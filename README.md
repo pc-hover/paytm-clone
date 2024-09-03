@@ -20,7 +20,6 @@ Axios POST: const response = await axios.get(url,headers);
 
 -CONTINUE: Postman request not handles           
 
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE1MmFlZWUwNGJlOWU1MTA2MWI3MTUiLCJpYXQiOjE3MjIxMDA0NjJ9.0NRDusPrZLPe1Hnd06dg1OIZQcxIkaDwOnaXRRNHkHw0
 
 
 ADD ONS:
