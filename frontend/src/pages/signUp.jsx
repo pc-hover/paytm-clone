@@ -5,6 +5,7 @@ import { InputTextBox } from "../components/InputTextBox"
 import { BottomWarning } from "../components/BottomWarning"
 import { Button } from "../components/Button"
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 import axios from "axios"
 
 export const Signup = () => {
@@ -13,7 +14,7 @@ export const Signup = () => {
     const [lastName, setLastName] = useState("");
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-
+    const navigate = useNavigate();
 
 
     return <div className="bg-black h-screen flex justify-center">
@@ -22,22 +23,14 @@ export const Signup = () => {
                 <Heading label={"Sign Up"} />
                 <SubHeading label={"Enter your details below"} />
 
-                <InputTextBox placeholder={"Priyanshu"} label={"First Name"} onChange={e => {
-                    setFirstName(e.target.value);
-                }} />
+                <InputTextBox placeholder={"Priyanshu"} label={"First Name"} onChange={setFirstName} />
 
                 <InputTextBox placeholder={"Choudhary"} label={"Last Name"}
-                    onChange={e => {
-                        setLastName(e.target.value);
-                    }} />
+                    onChange={setLastName} />
 
-                <InputTextBox placeholder={"priyanshu@gmail.com"} label={"Email"} onChange={e => {
-                    setUsername(e.target.value);
-                }} />
+                <InputTextBox placeholder={"priyanshu@gmail.com"} label={"Email"} onChange={setUsername} />
 
-                <InputTextBox placeholder={"435247"} label={"Password"} onChange={e => {
-                    setPassword(e.target.value);
-                }} />
+                <InputTextBox placeholder={"435247"} label={"Password"} onChange={setPassword} />
 
                 <div className="pt-4">
                     <Button onClick={async () => {
@@ -51,10 +44,7 @@ export const Signup = () => {
                         localStorage.setItem("token", response.data.token)
                         localStorage.setItem("firstName", firstName)
                         localStorage.setItem("lastName", lastName)
-
-
-
-
+                        navigate("/dashboard")
                     }} label={"Sign up"} />
                 </div>
                 <BottomWarning

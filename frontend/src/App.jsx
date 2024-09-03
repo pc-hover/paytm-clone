@@ -7,11 +7,12 @@ import { SendMoney } from "./pages/send"
 
 
 function App() {
-
+  const token = localStorage.getItem("token");
   return (<div>
     <BrowserRouter>
       <Routes>
         <Route path="/signup" element={<Signup />}></Route>
+        <Route path="/" element={token ? <Dashboard /> : <Signup />}></Route>
         <Route path="/signin" element={<Signin />}></Route>
         <Route path="/dashboard" element={<Dashboard />}></Route>
         <Route path="/transfer" element={<SendMoney />}></Route>
