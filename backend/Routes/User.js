@@ -20,7 +20,7 @@ userRouter.post("/signup", async (req, res) => {
         username: body.username
     })
 
-    if (user._id) {
+    if (user) {
         res.json({
             message: "Email already taken"
         })
